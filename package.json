@@ -1,0 +1,31 @@
+{
+  "name": "timecop",
+  "description": "A React HOC typeahead field for selecting a timezone",
+  "version": "1.0.0",
+  "author": "Carlo DiCelico <carlodicelico@me.com>",
+  "bugs": "https://github.com/carlodicelico/timecop/issues",
+  "dependencies": {
+    "fast-memoize": "^2.2.7",
+    "fuse.js": "^2.6.2",
+    "moment-timezone": "^0.5.13",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3"
+  },
+  "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.4.0",
+    "@kadira/storybook": "^2.35.3",
+    "@kadira/storybook-addon-knobs": "^1.7.1",
+    "prop-types": "^15.5.6"
+  },
+  "homepage": "https://github.com/carlodicelico/timecop",
+  "keywords": [
+    "react",
+    "timezone"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/carlodicelico/timecop.git",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  }
+}
