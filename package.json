@@ -8,14 +8,14 @@
     "fast-memoize": "^2.2.7",
     "fuse.js": "^2.6.2",
     "moment-timezone": "^0.5.13",
-    "react": "^15.5.3",
-    "react-dom": "^15.5.3"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.4.0",
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-addon-knobs": "^1.7.1",
-    "prop-types": "^15.5.6"
+    "prop-types": "^15.5.7"
   },
   "homepage": "https://github.com/carlodicelico/timecop",
   "keywords": [

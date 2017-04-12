@@ -1,12 +1,14 @@
 import guessUserTz, { timeForTz, tzForName } from '../lib/timecopUtils';
+import handleSearchInput from '../lib/searchUtils';
 
-import PropTypes from 'prop-types';
-import React from 'react';
+import React, { PropTypes } from 'react';
 
 const TimeCop = (props) => {
-    const { timezone, onChange } = props;
+    const { timezone, onChange, value } = props;
     const { city, zoneName, zoneAbbr } = tzForName(timezone);
     const timestamp = timeForTz(zoneName);
+    const westAbbr = tzForName('US/Pacific').zoneAbbr;
+    const eastAbbr = tzForName('US/Eastern').zoneAbbr;
     const defaultStyles = {
         backgroundColor: 'rgb(250,250,250)',
         padding: '0.5rem',
@@ -21,8 +23,10 @@ const TimeCop = (props) => {
 
     return (
         <div style={defaultStyles}>
-            <label htmlFor="timezone">Closest City <br/>
-                <input id="timezone" type="text" value={city} onChange={onChange} style={{width: '200px'}}></input>
+            <label htmlFor="timezone">Choose a timezone <br/>
+                <h6>You can search by largest city, timezone name, or timezone abbreviation.<br />
+                e.g., "Los Angeles", "Pacific", or "{westAbbr}" - "New York", "Eastern", or "{eastAbbr}"</h6>
+                <input id="timezone" type="text" placeholder={city} value={value} onChange={handleSearchInput} style={{width: '200px'}}></input>
                 <p><b>Your selected datetime information is:</b><br />{timestamp}<br />{zoneName}<br />{zoneAbbr}</p>
             </label>
         </div>
@@ -31,12 +35,14 @@ const TimeCop = (props) => {
 
 TimeCop.propTypes = {
     timezone: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    value: PropTypes.string
 };
 
 TimeCop.defaultProps = {
     timezone: guessUserTz(),
-    onChange: () => {}
+    onChange: () => {},
+    value: ''
 };
 
 export default TimeCop;
